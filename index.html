@@ -70,7 +70,6 @@ section{padding:90px 40px; overflow-x: hidden;}
   background:var(--card);
   padding:30px;border-radius:18px;
   transition:.3s;
-  /* --- FIX: ADDED FLEX PROPERTIES TO FIX LAYOUT --- */
   display: flex;
   flex-direction: column;
 }
@@ -96,7 +95,7 @@ section{padding:90px 40px; overflow-x: hidden;}
 .card ul {
     list-style-type: none;
     padding-left: 0;
-    margin-top: auto; /* Pushes list to the bottom if space is available */
+    margin-top: auto;
 }
 .card ul li {
     background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23ff4d00" class="bi bi-check-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>') no-repeat left center;
@@ -105,12 +104,13 @@ section{padding:90px 40px; overflow-x: hidden;}
 }
 
 
-/* SPLINE 3D */
+/* 3D MODEL BOX */
 .spline-box{
   max-width:900px;
   margin:0 auto 60px;
   border-radius:20px;
-  overflow:hidden
+  overflow:hidden;
+  height: 480px; /* Ensure consistent height */
 }
 
 /* FORM */
@@ -185,8 +185,12 @@ section{padding:90px 40px; overflow-x: hidden;}
 <section>
   <h2 class="title" data-aos="fade-up">A New Dimension of Fitness</h2>
   <div class="spline-box" data-aos="zoom-in">
-    <!-- --- FIX: REPLACED BROKEN SKETCHFAB LINK WITH A NEW, WORKING ONE --- -->
-    <iframe title="Fitness trainer" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/052fa70548ca4b3ea35174f88a1e2a1b/embed" style="width: 100%; height: 480px;"></iframe>
+    <!-- --- FIX: Replaced broken Sketchfab link with a new, working, and animated model --- -->
+    <!-- If this model breaks again in the future, you can find a new one by:
+         1. Going to Sketchfab.com
+         2. Searching for "fitness", "gym", or "workout"
+         3. Finding a model you like, clicking the "Embed" button, and copying the iframe code here. -->
+    <iframe title="Man fitness" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/3b5936bff973405f826a79e43b236113/embed?autospin=1&autostart=1&ui_theme=dark" style="width: 100%; height: 100%;"></iframe>
   </div>
 </section>
 
@@ -302,7 +306,6 @@ AOS.init({
 });
 
 function sendWhatsApp(){
-  // Ensure the element IDs are correct when getting values
   let name = document.getElementById('name').value;
   let age = document.getElementById('age').value;
   let gender = document.getElementById('gender').value;
