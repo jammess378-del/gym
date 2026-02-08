@@ -105,12 +105,12 @@ section{padding:90px 40px; overflow-x: hidden;}
 
 
 /* 3D MODEL BOX */
-.spline-box{
+.model-box{
   max-width:900px;
+  height: 480px;
   margin:0 auto 60px;
   border-radius:20px;
   overflow:hidden;
-  height: 480px; /* Ensure consistent height */
 }
 
 /* FORM */
@@ -184,13 +184,9 @@ section{padding:90px 40px; overflow-x: hidden;}
 <!-- 3D SECTION -->
 <section>
   <h2 class="title" data-aos="fade-up">A New Dimension of Fitness</h2>
-  <div class="spline-box" data-aos="zoom-in">
-    <!-- --- FIX: Replaced broken Sketchfab link with a new, working, and animated model --- -->
-    <!-- If this model breaks again in the future, you can find a new one by:
-         1. Going to Sketchfab.com
-         2. Searching for "fitness", "gym", or "workout"
-         3. Finding a model you like, clicking the "Embed" button, and copying the iframe code here. -->
-    <iframe title="Man fitness" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/3b5936bff973405f826a79e43b236113/embed?autospin=1&autostart=1&ui_theme=dark" style="width: 100%; height: 100%;"></iframe>
+  <div class="model-box" data-aos="zoom-in">
+    <!-- This is your chosen 3D model, now integrated into the site -->
+    <iframe title="Lowpoly People Fitness Pack" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/c4b141503fc04487822d90bea972a670/embed?autostart=1&autospin=1&ui_theme=dark" style="width: 100%; height: 100%;"> </iframe>
   </div>
 </section>
 
@@ -301,8 +297,8 @@ section{padding:90px 40px; overflow-x: hidden;}
 <script>
 // Initialize AOS
 AOS.init({
-    duration: 1000, // values from 0 to 3000, with step 50ms
-    once: true, // whether animation should happen only once - while scrolling down
+    duration: 1000,
+    once: true,
 });
 
 function sendWhatsApp(){
