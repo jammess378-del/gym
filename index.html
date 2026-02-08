@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elite Fitness Gym</title>
+<title>Elite Fitness Gym - Unleash Your Potential</title>
+
+<!-- AOS Animation Library CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 <style>
 :root{
@@ -12,7 +15,7 @@
   --card:#151515;
   --text:#f2f2f2;
 }
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,Helvetica,sans-serif}
+*{margin:0;padding:0;box-sizing:border-box;font-family: 'Poppins', Arial, Helvetica, sans-serif;}
 body{background:var(--dark);color:var(--text);scroll-behavior:smooth}
 
 /* NAV */
@@ -21,10 +24,11 @@ nav{
   background:rgba(0,0,0,.85);
   padding:15px 40px;
   display:flex;justify-content:space-between;align-items:center;
-  z-index:1000
+  z-index:1000;
+  backdrop-filter: blur(10px);
 }
-nav h1{color:var(--primary)}
-nav a{color:#fff;margin-left:20px;text-decoration:none}
+nav h1{color:var(--primary); font-size: 28px;}
+nav a{color:#fff;margin-left:20px;text-decoration:none; font-size: 18px; transition: color 0.3s;}
 nav a:hover{color:var(--primary)}
 
 /* HERO */
@@ -33,44 +37,69 @@ nav a:hover{color:var(--primary)}
   display:flex;align-items:center;
   padding:40px;
   background:
-    linear-gradient(to right,rgba(0,0,0,.9),rgba(0,0,0,.3)),
-    url("https://images.unsplash.com/photo-1558611848-73f7eb4001a1") center/cover;
+    linear-gradient(to right,rgba(0,0,0,.95),rgba(0,0,0,.3)),
+    url("https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=1975&auto=format&fit=crop") center/cover;
 }
-.hero-content{max-width:600px;animation:fadeUp 1.5s}
-.hero h2{font-size:52px;margin-bottom:15px}
-.hero p{margin-bottom:25px;color:#ddd}
+.hero-content{max-width:700px;}
+.hero h2{font-size:62px;margin-bottom:15px; line-height: 1.2;}
+.hero p{margin-bottom:25px;color:#ddd; font-size: 20px;}
 .hero button{
   padding:15px 35px;
   background:var(--primary);
   border:none;color:#fff;
   font-size:18px;border-radius:30px;
-  cursor:pointer
+  cursor:pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.hero button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 77, 0, 0.3);
 }
 
 /* SECTION */
-section{padding:90px 40px}
-.title{text-align:center;font-size:38px;margin-bottom:40px}
+section{padding:90px 40px; overflow-x: hidden;}
+.title{text-align:center;font-size:42px;margin-bottom:50px; font-weight: 600;}
 
 /* CARDS */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px
 }
 .card{
   background:var(--card);
-  padding:20px;border-radius:18px;
+  padding:30px;border-radius:18px;
   transition:.3s
 }
 .card:hover{
   transform:translateY(-10px);
   box-shadow:0 20px 40px rgba(255,77,0,.25)
 }
-.card img, .card video{
+.card img{
   width:100%;
   border-radius:14px;
-  margin-bottom:15px
+  margin-bottom:20px
 }
+.card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+.card p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+.card ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+.card ul li {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23ff4d00" class="bi bi-check-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>') no-repeat left center;
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+
 
 /* SPLINE 3D */
 .spline-box{
@@ -89,19 +118,26 @@ section{padding:90px 40px}
 }
 .form-box input,.form-box select{
   width:100%;
-  padding:12px;
+  padding:15px;
   margin-bottom:15px;
   background:#0f0f0f;
   border:1px solid #333;
-  color:#fff;border-radius:10px
+  color:#fff;border-radius:10px;
+  font-size: 16px;
 }
 .form-box button{
   width:100%;
-  padding:14px;
+  padding:16px;
   background:var(--primary);
   border:none;color:#fff;
   font-size:18px;border-radius:30px;
-  cursor:pointer
+  cursor:pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.form-box button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255, 77, 0, 0.3);
 }
 
 /* WHATSAPP FLOAT */
@@ -111,14 +147,13 @@ section{padding:90px 40px}
   width:55px;height:55px;
   display:flex;align-items:center;justify-content:center;
   border-radius:50%;
-  font-size:26px;text-decoration:none
+  font-size:26px;text-decoration:none;
+  transition: transform 0.3s;
+}
+.whatsapp:hover {
+    transform: scale(1.1);
 }
 
-/* ANIMATION */
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(30px)}
-  to{opacity:1;transform:translateY(0)}
-}
 </style>
 </head>
 
@@ -135,47 +170,81 @@ section{padding:90px 40px}
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-content">
-    <h2>Transform Your Body<br>Transform Your Life</h2>
-    <p>Professional training • Modern workouts • Real results</p>
-    <button onclick="document.getElementById('join').scrollIntoView()">Join Now</button>
+  <div class="hero-content" data-aos="fade-up">
+    <h2>Unleash Your Potential,<br>Redefine Your Strength</h2>
+    <p>Experience state-of-the-art equipment, expert trainers, and a community that motivates you to achieve your fitness goals.</p>
+    <button onclick="document.getElementById('join').scrollIntoView()">Become a Member</button>
   </div>
 </div>
 
 <!-- 3D SECTION -->
 <section>
-  <h2 class="title">Train With Next-Gen Experience</h2>
-  <div class="spline-box">
-    <!-- Replace src with your own Spline 3D link anytime -->
-    <iframe src="https://my.spline.design/placeholdergym3d/"
-      width="100%" height="480" frameborder="0"></iframe>
+  <h2 class="title" data-aos="fade-up">A New Dimension of Fitness</h2>
+  <div class="spline-box" data-aos="zoom-in">
+    <!-- Gym-themed 3D model from Sketchfab -->
+    <iframe title="Gym character" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/b720e89535ea4565a6064b3bdf2e4242/embed" style="width: 100%; height: 480px;"></iframe>
   </div>
 </section>
 
 <!-- WORKOUT PROGRAMS -->
 <section id="programs">
-  <h2 class="title">Workout Programs</h2>
+  <h2 class="title" data-aos="fade-up">Our Signature Programs</h2>
   <div class="grid">
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1554311884-415bfda6be12">
-      <video src="https://cdn.pixabay.com/video/2019/05/16/23542-338327015_large.mp4" controls muted></video>
-      <h3>Yoga & Flexibility</h3>
-      <p>Improve balance, mobility, breathing & inner strength.</p>
+    <div class="card" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07b?q=80&w=2069&auto=format&fit=crop" alt="Muscle Gain">
+        <h3>Muscle Gain</h3>
+        <p>Our muscle gain program is designed to help you build lean muscle mass through a combination of targeted strength training and nutritional guidance.</p>
+        <h4>Key Benefits:</h4>
+        <ul>
+            <li>Increased Strength & Power</li>
+            <li>Enhanced Metabolism</li>
+            <li>Improved Body Composition</li>
+        </ul>
+        <h4>Sample Workout:</h4>
+        <p>Barbell Squats, Bench Press, Deadlifts, Overhead Press, and Bent-Over Rows.</p>
     </div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1599058917212-d750089bc07b">
-      <video src="https://cdn.pixabay.com/video/2020/08/25/47924-451030354_large.mp4" controls muted></video>
-      <h3>Muscle Gain</h3>
-      <p>Build lean muscle with progressive overload training.</p>
+    <div class="card" data-aos="fade-up" data-aos-delay="200">
+        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=2070&auto=format&fit=crop" alt="Fat Loss">
+        <h3>Fat Loss</h3>
+        <p>This high-intensity program focuses on burning calories and improving cardiovascular health through a mix of HIIT, cardio, and functional exercises.</p>
+        <h4>Key Benefits:</h4>
+        <ul>
+            <li>Effective Calorie Burn</li>
+            <li>Improved Heart Health</li>
+            <li>Increased Endurance</li>
+        </ul>
+        <h4>Sample Workout:</h4>
+        <p>Burpees, Kettlebell Swings, Battle Ropes, and High-Knee Sprints.</p>
     </div>
 
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a">
-      <video src="https://cdn.pixabay.com/video/2020/09/04/48918-455345610_large.mp4" controls muted></video>
-      <h3>Fat Loss</h3>
-      <p>Burn fat through HIIT, cardio & functional workouts.</p>
+    <div class="card" data-aos="fade-up" data-aos-delay="300">
+        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2120&auto=format&fit=crop" alt="Yoga & Flexibility">
+        <h3>Yoga & Flexibility</h3>
+        <p>Improve your balance, mobility, and inner strength with our yoga and flexibility classes. Suitable for all levels, from beginners to advanced practitioners.</p>
+        <h4>Key Benefits:</h4>
+        <ul>
+            <li>Reduced Stress & Anxiety</li>
+            <li>Increased Flexibility & Mobility</li>
+            <li>Enhanced Mind-Body Connection</li>
+        </ul>
+        <h4>Sample Workout:</h4>
+        <p>Sun Salutations, Warrior Poses, Downward-Facing Dog, and Pigeon Pose.</p>
+    </div>
+    
+    <div class="card" data-aos="fade-up" data-aos-delay="400">
+        <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070&auto=format&fit=crop" alt="CrossFit">
+        <h3>CrossFit</h3>
+        <p>A high-intensity workout program that combines elements of weightlifting, gymnastics, and metabolic conditioning to improve overall fitness.</p>
+        <h4>Key Benefits:</h4>
+        <ul>
+            <li>Full-Body Workout</li>
+            <li>Builds Functional Strength</li>
+            <li>Supportive Community</li>
+        </ul>
+        <h4>Sample Workout:</h4>
+        <p>AMRAP (As Many Rounds As Possible) of Pull-ups, Push-ups, and Air Squats.</p>
     </div>
 
   </div>
@@ -183,8 +252,8 @@ section{padding:90px 40px}
 
 <!-- JOIN FORM -->
 <section id="join">
-  <h2 class="title">Start Your Fitness Journey</h2>
-  <div class="form-box">
+  <h2 class="title" data-aos="fade-up">Start Your Fitness Journey Today</h2>
+  <div class="form-box" data-aos="zoom-in">
     <input id="name" placeholder="Full Name" required>
     <input id="age" placeholder="Age" type="number">
     <select id="gender">
@@ -198,6 +267,7 @@ section{padding:90px 40px}
       <option>Muscle Gain</option>
       <option>Fat Loss</option>
       <option>Yoga / Flexibility</option>
+      <option>CrossFit</option>
       <option>Strength Training</option>
     </select>
     <select id="time">
@@ -211,22 +281,31 @@ section{padding:90px 40px}
 
 <!-- CONTACT -->
 <section id="contact">
-  <h2 class="title">Contact</h2>
-  <p style="text-align:center">📍 Elite Fitness Gym<br>🕒 6 AM – 10 PM</p>
+  <h2 class="title" data-aos="fade-up">Get In Touch</h2>
+  <p style="text-align:center; font-size: 18px;" data-aos="fade-up" data-aos-delay="100">📍 Elite Fitness Gym<br>123 Fitness Avenue, Wellness City<br>🕒 6 AM – 10 PM Everyday</p>
 </section>
 
 <a class="whatsapp" href="#join">💬</a>
 
+<!-- AOS Animation Library JS -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
 <script>
+// Initialize AOS
+AOS.init({
+    duration: 1000, // values from 0 to 3000, with step 50ms
+    once: true, // whether animation should happen only once - while scrolling down
+});
+
 function sendWhatsApp(){
   let msg =
 `Hello Trainer 👋
 
-Name: ${name.value}
-Age: ${age.value}
-Gender: ${gender.value}
-Goal: ${goal.value}
-Preferred Time: ${time.value}
+Name: ${document.getElementById('name').value}
+Age: ${document.getElementById('age').value}
+Gender: ${document.getElementById('gender').value}
+Goal: ${document.getElementById('goal').value}
+Preferred Time: ${document.getElementById('time').value}
 
 I want to join your gym. Please guide me.`;
 
