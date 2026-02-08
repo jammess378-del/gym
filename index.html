@@ -69,7 +69,10 @@ section{padding:90px 40px; overflow-x: hidden;}
 .card{
   background:var(--card);
   padding:30px;border-radius:18px;
-  transition:.3s
+  transition:.3s;
+  /* --- FIX: ADDED FLEX PROPERTIES TO FIX LAYOUT --- */
+  display: flex;
+  flex-direction: column;
 }
 .card:hover{
   transform:translateY(-10px);
@@ -93,6 +96,7 @@ section{padding:90px 40px; overflow-x: hidden;}
 .card ul {
     list-style-type: none;
     padding-left: 0;
+    margin-top: auto; /* Pushes list to the bottom if space is available */
 }
 .card ul li {
     background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23ff4d00" class="bi bi-check-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>') no-repeat left center;
@@ -181,8 +185,8 @@ section{padding:90px 40px; overflow-x: hidden;}
 <section>
   <h2 class="title" data-aos="fade-up">A New Dimension of Fitness</h2>
   <div class="spline-box" data-aos="zoom-in">
-    <!-- Gym-themed 3D model from Sketchfab -->
-    <iframe title="Gym character" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/b720e89535ea4565a6064b3bdf2e4242/embed" style="width: 100%; height: 480px;"></iframe>
+    <!-- --- FIX: REPLACED BROKEN SKETCHFAB LINK WITH A NEW, WORKING ONE --- -->
+    <iframe title="Fitness trainer" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/052fa70548ca4b3ea35174f88a1e2a1b/embed" style="width: 100%; height: 480px;"></iframe>
   </div>
 </section>
 
@@ -298,14 +302,21 @@ AOS.init({
 });
 
 function sendWhatsApp(){
+  // Ensure the element IDs are correct when getting values
+  let name = document.getElementById('name').value;
+  let age = document.getElementById('age').value;
+  let gender = document.getElementById('gender').value;
+  let goal = document.getElementById('goal').value;
+  let time = document.getElementById('time').value;
+
   let msg =
 `Hello Trainer 👋
 
-Name: ${document.getElementById('name').value}
-Age: ${document.getElementById('age').value}
-Gender: ${document.getElementById('gender').value}
-Goal: ${document.getElementById('goal').value}
-Preferred Time: ${document.getElementById('time').value}
+Name: ${name}
+Age: ${age}
+Gender: ${gender}
+Goal: ${goal}
+Preferred Time: ${time}
 
 I want to join your gym. Please guide me.`;
 
