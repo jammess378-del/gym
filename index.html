@@ -25,36 +25,62 @@ nav{
   padding:10px 40px;
   display:flex;justify-content:space-between;align-items:center;
   z-index:1000;
-  border-bottom: 1px solid #222;
+  border-bottom: 2px solid #222;
 }
 
-/* LOGO STYLES */
-.logo-container {
+/* === NEW LOGO STYLE (NO IMAGE NEEDED) === */
+.brand-logo {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
+    text-decoration: none;
 }
-.logo-container img {
-    height: 60px; /* Adjusted size for your specific logo */
-    width: auto;
-    border-radius: 5px;
+
+/* The Icon "R" shape simulation */
+.brand-icon {
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    /* Creating a stylized R/Wing shape using clip-path */
+    clip-path: polygon(0 0, 100% 0, 85% 50%, 100% 100%, 70% 100%, 55% 50%, 30% 50%, 30% 100%, 0 100%);
+    position: relative;
 }
-.logo-text {
+.brand-icon::after {
+    content: '';
+    position: absolute;
+    top: 10px; left: 10px;
+    width: 20px; height: 15px;
+    background: var(--dark);
+    clip-path: polygon(0 0, 100% 0, 70% 100%, 0 100%);
+}
+
+.brand-text {
     display: flex;
     flex-direction: column;
+    justify-content: center;
 }
-.logo-text h1 {
-    color: #fff; 
-    font-size: 24px;
+
+.brand-text h1 {
+    font-size: 32px;
+    font-weight: 800; /* Extra Bold */
+    color: #fff;
     line-height: 1;
-    font-weight: 700;
-    margin: 0;
-}
-.logo-text span {
-    font-size: 10px;
-    color: var(--primary);
     letter-spacing: 1px;
+    margin: 0;
+    text-transform: uppercase;
+    font-style: italic; /* Slight slant like the logo */
 }
+
+.brand-text span {
+    font-size: 10px;
+    color: #fff;
+    letter-spacing: 1.5px;
+    font-weight: 400;
+    text-transform: uppercase;
+    opacity: 0.9;
+    margin-top: 2px;
+}
+/* ========================================= */
 
 nav a{color:#fff;margin-left:20px;text-decoration:none; font-size: 16px; transition: color 0.3s; text-transform: uppercase; font-weight: 500;}
 nav a:hover{color:var(--primary)}
@@ -201,15 +227,15 @@ section{padding:90px 40px; overflow-x: hidden;}
 <body>
 
 <nav>
-  <!-- LOGO SECTION -->
-  <div class="logo-container">
-    <!-- MAKE SURE YOUR IMAGE IS NAMED logo.jpg -->
-    <img src="logo.jpg" alt="Revamp Fitness Logo">
-    <div class="logo-text">
-        <h1>REVAMP FITNESS</h1>
-        <span>ZERO TO ONE FITNESS PVT. LTD.</span>
-    </div>
-  </div>
+  <!-- === LOGO (CSS BASED - WORKS INSTANTLY) === -->
+  <a href="#" class="brand-logo">
+      <!-- This creates the logo shape without an image file -->
+      <div class="brand-icon"></div> 
+      <div class="brand-text">
+          <h1>REVAMP</h1>
+          <span>ZERO TO ONE FITNESS PVT. LTD.</span>
+      </div>
+  </a>
   
   <div>
     <a href="#programs">Programs</a>
@@ -222,7 +248,7 @@ section{padding:90px 40px; overflow-x: hidden;}
 <div class="hero">
   <div class="hero-content" data-aos="fade-up">
     <h2>Unleash Your Potential,<br>Redefine Your Strength</h2>
-    <p>Welcome to Revamp Fitness. Experience state-of-the-art equipment, expert trainers, and a community that motivates you.</p>
+    <p>Welcome to <strong>REVAMP FITNESS</strong>. Experience state-of-the-art equipment, expert trainers, and a community that motivates you.</p>
     <button onclick="document.getElementById('join').scrollIntoView()">Become a Member</button>
   </div>
 </div>
