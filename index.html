@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- UPDATE TITLE HERE -->
-<title>YOUR_GYM_NAME - Unleash Your Potential</title>
+<title>Revamp Fitness - Zero to One Fitness Pvt. Ltd.</title>
 
 <!-- AOS Animation Library CSS -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -22,26 +21,42 @@ body{background:var(--dark);color:var(--text);scroll-behavior:smooth}
 /* NAV */
 nav{
   position:fixed;top:0;width:100%;
-  background:rgba(0,0,0,.85);
-  padding:15px 40px;
+  background:rgba(0,0,0,.95);
+  padding:10px 40px;
   display:flex;justify-content:space-between;align-items:center;
   z-index:1000;
-  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #222;
 }
 
 /* LOGO STYLES */
 .logo-container {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
 }
 .logo-container img {
-    height: 40px; /* Adjust size of logo here */
+    height: 60px; /* Adjusted size for your specific logo */
     width: auto;
+    border-radius: 5px;
 }
-nav h1{color:var(--primary); font-size: 28px;}
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+.logo-text h1 {
+    color: #fff; 
+    font-size: 24px;
+    line-height: 1;
+    font-weight: 700;
+    margin: 0;
+}
+.logo-text span {
+    font-size: 10px;
+    color: var(--primary);
+    letter-spacing: 1px;
+}
 
-nav a{color:#fff;margin-left:20px;text-decoration:none; font-size: 18px; transition: color 0.3s;}
+nav a{color:#fff;margin-left:20px;text-decoration:none; font-size: 16px; transition: color 0.3s; text-transform: uppercase; font-weight: 500;}
 nav a:hover{color:var(--primary)}
 
 /* HERO */
@@ -50,7 +65,7 @@ nav a:hover{color:var(--primary)}
   display:flex;align-items:center;
   padding:40px;
   background:
-    linear-gradient(to right,rgba(0,0,0,.95),rgba(0,0,0,.3)),
+    linear-gradient(to right,rgba(0,0,0,.9),rgba(0,0,0,.4)),
     url("https://images.unsplash.com/photo-1571902943202-507ec2618e8f?q=80&w=1975&auto=format&fit=crop") center/cover;
 }
 .hero-content{max-width:700px;}
@@ -92,8 +107,8 @@ section{padding:90px 40px; overflow-x: hidden;}
 }
 .card img{
   width:100%;
-  height: 200px; /* Added fixed height for uniformity */
-  object-fit: cover; /* Ensures image covers the area without distortion */
+  height: 200px;
+  object-fit: cover;
   border-radius:14px;
   margin-bottom:20px
 }
@@ -106,6 +121,7 @@ section{padding:90px 40px; overflow-x: hidden;}
     font-size: 16px;
     line-height: 1.6;
     margin-bottom: 15px;
+    color: #ccc;
 }
 .card ul {
     list-style-type: none;
@@ -116,6 +132,12 @@ section{padding:90px 40px; overflow-x: hidden;}
     background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="%23ff4d00" class="bi bi-check-circle-fill" viewBox="0 0 16 16"><path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/></svg>') no-repeat left center;
     padding-left: 25px;
     margin-bottom: 10px;
+    color: #ddd;
+}
+.card h4 {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #fff;
 }
 
 
@@ -179,11 +201,14 @@ section{padding:90px 40px; overflow-x: hidden;}
 <body>
 
 <nav>
-  <!-- CHANGE LOGO AND NAME HERE -->
+  <!-- LOGO SECTION -->
   <div class="logo-container">
-    <!-- Replace 'logo.png' with your actual image file or URL -->
-    <img src="logo.png" alt="Logo"> 
-    <h1>YOUR_GYM_NAME</h1>
+    <!-- MAKE SURE YOUR IMAGE IS NAMED logo.jpg -->
+    <img src="logo.jpg" alt="Revamp Fitness Logo">
+    <div class="logo-text">
+        <h1>REVAMP FITNESS</h1>
+        <span>ZERO TO ONE FITNESS PVT. LTD.</span>
+    </div>
   </div>
   
   <div>
@@ -197,7 +222,7 @@ section{padding:90px 40px; overflow-x: hidden;}
 <div class="hero">
   <div class="hero-content" data-aos="fade-up">
     <h2>Unleash Your Potential,<br>Redefine Your Strength</h2>
-    <p>Experience state-of-the-art equipment, expert trainers, and a community that motivates you to achieve your fitness goals.</p>
+    <p>Welcome to Revamp Fitness. Experience state-of-the-art equipment, expert trainers, and a community that motivates you.</p>
     <button onclick="document.getElementById('join').scrollIntoView()">Become a Member</button>
   </div>
 </div>
@@ -215,6 +240,7 @@ section{padding:90px 40px; overflow-x: hidden;}
   <h2 class="title" data-aos="fade-up">Our Signature Programs</h2>
   <div class="grid">
 
+    <!-- Muscle Gain -->
     <div class="card" data-aos="fade-up" data-aos-delay="100">
         <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2070&auto=format&fit=crop" alt="Muscle Gain">
         <h3>Muscle Gain</h3>
@@ -229,6 +255,7 @@ section{padding:90px 40px; overflow-x: hidden;}
         <p>Barbell Squats, Bench Press, Deadlifts, Overhead Press, and Bent-Over Rows.</p>
     </div>
 
+    <!-- Fat Loss -->
     <div class="card" data-aos="fade-up" data-aos-delay="200">
         <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?q=80&w=2070&auto=format&fit=crop" alt="Fat Loss">
         <h3>Fat Loss</h3>
@@ -243,7 +270,7 @@ section{padding:90px 40px; overflow-x: hidden;}
         <p>Burpees, Kettlebell Swings, Battle Ropes, and High-Knee Sprints.</p>
     </div>
 
-    <!-- NEW ZUMBA SECTION -->
+    <!-- ZUMBA (ADDED) -->
     <div class="card" data-aos="fade-up" data-aos-delay="300">
         <img src="https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?q=80&w=2070&auto=format&fit=crop" alt="Zumba Training">
         <h3>Zumba Fitness</h3>
@@ -258,7 +285,7 @@ section{padding:90px 40px; overflow-x: hidden;}
         <p>Salsa steps, Merengue hops, Cumbia rhythm, and Reggaeton bounce.</p>
     </div>
 
-    <!-- NEW DIET PLAN SECTION -->
+    <!-- DIET PLAN (ADDED) -->
     <div class="card" data-aos="fade-up" data-aos-delay="400">
         <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=2053&auto=format&fit=crop" alt="Proper Diet Plan">
         <h3>Proper Diet Plan</h3>
@@ -273,6 +300,7 @@ section{padding:90px 40px; overflow-x: hidden;}
         <p>Balanced proteins, complex carbs, healthy fats, and hydration tracking.</p>
     </div>
 
+    <!-- Yoga -->
     <div class="card" data-aos="fade-up" data-aos-delay="500">
         <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2120&auto=format&fit=crop" alt="Yoga & Flexibility">
         <h3>Yoga & Flexibility</h3>
@@ -287,6 +315,7 @@ section{padding:90px 40px; overflow-x: hidden;}
         <p>Sun Salutations, Warrior Poses, Downward-Facing Dog, and Pigeon Pose.</p>
     </div>
     
+    <!-- CrossFit -->
     <div class="card" data-aos="fade-up" data-aos-delay="600">
         <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070&auto=format&fit=crop" alt="CrossFit">
         <h3>CrossFit</h3>
@@ -338,7 +367,12 @@ section{padding:90px 40px; overflow-x: hidden;}
 <!-- CONTACT -->
 <section id="contact">
   <h2 class="title" data-aos="fade-up">Get In Touch</h2>
-  <p style="text-align:center; font-size: 18px;" data-aos="fade-up" data-aos-delay="100">📍 YOUR_GYM_NAME<br>123 Fitness Avenue, Wellness City<br>🕒 6 AM – 10 PM Everyday</p>
+  <p style="text-align:center; font-size: 18px;" data-aos="fade-up" data-aos-delay="100">
+    📍 REVAMP FITNESS<br>
+    <span style="font-size: 14px; color: #888;">ZERO TO ONE FITNESS PVT. LTD.</span><br>
+    123 Fitness Avenue, Wellness City<br>
+    🕒 6 AM – 10 PM Everyday
+  </p>
 </section>
 
 <a class="whatsapp" href="#join">💬</a>
@@ -361,7 +395,7 @@ function sendWhatsApp(){
   let time = document.getElementById('time').value;
 
   let msg =
-`Hello Trainer 👋
+`Hello Revamp Fitness Team 👋
 
 Name: ${name}
 Age: ${age}
