@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elite Fitness Gym - Unleash Your Potential</title>
+<!-- UPDATE TITLE HERE -->
+<title>YOUR_GYM_NAME - Unleash Your Potential</title>
 
 <!-- AOS Animation Library CSS -->
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -27,7 +28,19 @@ nav{
   z-index:1000;
   backdrop-filter: blur(10px);
 }
+
+/* LOGO STYLES */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.logo-container img {
+    height: 40px; /* Adjust size of logo here */
+    width: auto;
+}
 nav h1{color:var(--primary); font-size: 28px;}
+
 nav a{color:#fff;margin-left:20px;text-decoration:none; font-size: 18px; transition: color 0.3s;}
 nav a:hover{color:var(--primary)}
 
@@ -166,7 +179,13 @@ section{padding:90px 40px; overflow-x: hidden;}
 <body>
 
 <nav>
-  <h1>EliteFitness</h1>
+  <!-- CHANGE LOGO AND NAME HERE -->
+  <div class="logo-container">
+    <!-- Replace 'logo.png' with your actual image file or URL -->
+    <img src="logo.png" alt="Logo"> 
+    <h1>YOUR_GYM_NAME</h1>
+  </div>
+  
   <div>
     <a href="#programs">Programs</a>
     <a href="#join">Join</a>
@@ -197,7 +216,6 @@ section{padding:90px 40px; overflow-x: hidden;}
   <div class="grid">
 
     <div class="card" data-aos="fade-up" data-aos-delay="100">
-        <!-- === FIX: REPLACED BROKEN IMAGE LINK WITH A NEW, WORKING ONE === -->
         <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?q=80&w=2070&auto=format&fit=crop" alt="Muscle Gain">
         <h3>Muscle Gain</h3>
         <p>Our muscle gain program is designed to help you build lean muscle mass through a combination of targeted strength training and nutritional guidance.</p>
@@ -225,7 +243,37 @@ section{padding:90px 40px; overflow-x: hidden;}
         <p>Burpees, Kettlebell Swings, Battle Ropes, and High-Knee Sprints.</p>
     </div>
 
+    <!-- NEW ZUMBA SECTION -->
     <div class="card" data-aos="fade-up" data-aos-delay="300">
+        <img src="https://images.unsplash.com/photo-1524594152303-9fd13543fe6e?q=80&w=2070&auto=format&fit=crop" alt="Zumba Training">
+        <h3>Zumba Fitness</h3>
+        <p>Get ready to party yourself into shape! A high-energy dance workout that combines Latin and international music with dance moves.</p>
+        <h4>Key Benefits:</h4>
+        <ul>
+            <li>Huge Calorie Burn</li>
+            <li>Full Body Toning</li>
+            <li>Stress Relief & Fun</li>
+        </ul>
+        <h4>Sample Workout:</h4>
+        <p>Salsa steps, Merengue hops, Cumbia rhythm, and Reggaeton bounce.</p>
+    </div>
+
+    <!-- NEW DIET PLAN SECTION -->
+    <div class="card" data-aos="fade-up" data-aos-delay="400">
+        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?q=80&w=2053&auto=format&fit=crop" alt="Proper Diet Plan">
+        <h3>Proper Diet Plan</h3>
+        <p>Nutrition is 70% of the battle. Our nutritionists create customized meal plans tailored to your specific body type and fitness goals.</p>
+        <h4>Key Benefits:</h4>
+        <ul>
+            <li>Custom Macros & Micros</li>
+            <li>Sustainable Eating Habits</li>
+            <li>Faster Recovery Times</li>
+        </ul>
+        <h4>Sample Plan:</h4>
+        <p>Balanced proteins, complex carbs, healthy fats, and hydration tracking.</p>
+    </div>
+
+    <div class="card" data-aos="fade-up" data-aos-delay="500">
         <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=2120&auto=format&fit=crop" alt="Yoga & Flexibility">
         <h3>Yoga & Flexibility</h3>
         <p>Improve your balance, mobility, and inner strength with our yoga and flexibility classes. Suitable for all levels, from beginners to advanced practitioners.</p>
@@ -239,7 +287,7 @@ section{padding:90px 40px; overflow-x: hidden;}
         <p>Sun Salutations, Warrior Poses, Downward-Facing Dog, and Pigeon Pose.</p>
     </div>
     
-    <div class="card" data-aos="fade-up" data-aos-delay="400">
+    <div class="card" data-aos="fade-up" data-aos-delay="600">
         <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=2070&auto=format&fit=crop" alt="CrossFit">
         <h3>CrossFit</h3>
         <p>A high-intensity workout program that combines elements of weightlifting, gymnastics, and metabolic conditioning to improve overall fitness.</p>
@@ -272,6 +320,8 @@ section{padding:90px 40px; overflow-x: hidden;}
       <option>Fitness Goal</option>
       <option>Muscle Gain</option>
       <option>Fat Loss</option>
+      <option>Zumba Fitness</option>
+      <option>Diet Plan Consultation</option>
       <option>Yoga / Flexibility</option>
       <option>CrossFit</option>
       <option>Strength Training</option>
@@ -288,7 +338,7 @@ section{padding:90px 40px; overflow-x: hidden;}
 <!-- CONTACT -->
 <section id="contact">
   <h2 class="title" data-aos="fade-up">Get In Touch</h2>
-  <p style="text-align:center; font-size: 18px;" data-aos="fade-up" data-aos-delay="100">📍 Elite Fitness Gym<br>123 Fitness Avenue, Wellness City<br>🕒 6 AM – 10 PM Everyday</p>
+  <p style="text-align:center; font-size: 18px;" data-aos="fade-up" data-aos-delay="100">📍 YOUR_GYM_NAME<br>123 Fitness Avenue, Wellness City<br>🕒 6 AM – 10 PM Everyday</p>
 </section>
 
 <a class="whatsapp" href="#join">💬</a>
